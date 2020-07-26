@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import CardsList from'../CardsList/cards-list';
+
 import {CardType} from '../../types';
 
 
@@ -146,21 +148,7 @@ onCardTitleClick}) => {
               </li>
             </ul>
 
-            <div className="catalog__movies-list">
-              {/* eslint-disable-next-line react/prop-types */}
-              {catalogMoviesList.map((card, i) => (
-                <article key={`${card.name}${i}`}
-                  className="small-movie-card catalog__movies-card">
-                  <div className="small-movie-card__image">
-                    <img src={card.previewImage} alt={card.name} width="280" height="175" />
-                  </div>
-                  <h3 className="small-movie-card__title">
-                    <a className="small-movie-card__link" href={card.previewVideoLink}>{card.name}</a>
-                  </h3>
-                </article>
-              ))}
-
-            </div>
+            <CardsList catalogMoviesList={catalogMoviesList} />
 
             <div className="catalog__more">
               <button className="catalog__button" type="button">Show more</button>

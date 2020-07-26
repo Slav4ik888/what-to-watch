@@ -1,20 +1,18 @@
 import * as React from "react";
 import * as renderer from "react-test-renderer";
 
-import App from './app';
+import Card from './card';
 
 import {mockListFilms} from '../../mocks/mockListFilms';
 
 
-describe(`Snapshot <App/>`, () => {
-  it(`Render <App/>`, () => {
+describe(`Snapshot <CardList/>`, () => {
+  it(`Render <CardList/>`, () => {
     const tree = renderer
       .create(
-          <App
-            name={`Very good film`}
-            genre={`Comedy`}
-            released={2020}
-            catalogMoviesList={mockListFilms}
+          <Card
+            card={mockListFilms[0]}
+            onHoverFilm={() => {}}
           />
       )
       .toJSON();

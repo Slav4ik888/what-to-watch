@@ -3,7 +3,7 @@ import * as renderer from "react-test-renderer";
 
 import Main from './main';
 
-import {mockCards} from '../../mocks/cards';
+import {mockListFilms} from '../../mocks/mockListFilms';
 
 
 describe(`Snapshot <Main/>`, () => {
@@ -14,7 +14,7 @@ describe(`Snapshot <Main/>`, () => {
             name={`Very good film`}
             genre={`Comedy`}
             released={2020}
-            catalogMoviesList={mockCards}
+            catalogMoviesList={mockListFilms}
             onCardTitleClick={() => {}}
           />
       )

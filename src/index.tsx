@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 
 import App from './components/App/app';
 
-import {mockCards} from './mocks/cards';
+import {mockListFilms} from './mocks/mockListFilms';
 import {CardType} from './types';
 
 
@@ -13,5 +13,5 @@ const released = 2014;
 
 
 ReactDOM.render(
-    <App name={name} genre={genre} released={released} catalogMoviesList={mockCards}/>
+    <App name={name} genre={genre} released={released} catalogMoviesList={mockListFilms}/>
     , document.getElementById(`root`));

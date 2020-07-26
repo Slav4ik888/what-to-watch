@@ -1,4 +1,4 @@
-export const mockCards = [
+export const mockListFilms = [
   {
     id: 1,
     name: `Fantastic Beasts: The Crimes of Grindelwald`,

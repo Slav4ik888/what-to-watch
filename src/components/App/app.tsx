@@ -12,7 +12,9 @@ type Props = {
   catalogMoviesList: CardType[],
 };
 
-const _handleCardTitleClick = () => {};
+const _handleCardTitleClick = () => {
+  console.log(`handleCardTitleClick`);
+};
 
 const App: React.FC<Props> = ({name, genre, released, catalogMoviesList}) => {
   return (

@@ -4,7 +4,7 @@ import * as Adapter from "enzyme-adapter-react-16";
 
 import Main from "./main";
 
-import {mockCards} from '../../mocks/cards';
+import {mockListFilms} from '../../mocks/mockListFilms';
 
 
 configure({
@@ -20,7 +20,7 @@ it(`Should <Main/> button be pressed`, () => {
         name={`Very good film`}
         genre={`Comedy`}
         released={2020}
-        catalogMoviesList={mockCards}
+        catalogMoviesList={mockListFilms}
         onCardTitleClick={onCardTitleClick}
       />
   );

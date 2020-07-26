@@ -1,19 +1,16 @@
 import * as React from "react";
 import * as renderer from "react-test-renderer";
 
-import App from './app';
+import CardList from './cards-list';
 
 import {mockListFilms} from '../../mocks/mockListFilms';
 
 
-describe(`Snapshot <App/>`, () => {
-  it(`Render <App/>`, () => {
+describe(`Snapshot <CardList/>`, () => {
+  it(`Render <CardList/>`, () => {
     const tree = renderer
       .create(
-          <App
-            name={`Very good film`}
-            genre={`Comedy`}
-            released={2020}
+          <CardList
             catalogMoviesList={mockListFilms}
           />
       )
