@@ -27,8 +27,7 @@ class CardsList extends React.PureComponent<Props, State> {
   }
 
   _handleHoverFilm(film: CardType) {
-    console.log('film: ', film);
-
+    // console.log('film: ', film);
     this.setState({hoverFilm: film});
   }
 
