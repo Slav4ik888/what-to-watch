@@ -7,6 +7,7 @@ import {CardType} from '../../types';
 
 interface Props {
   catalogMoviesList: CardType[],
+  onCardTitleClick: (card: CardType) => void,
 };
 
 interface State {
@@ -32,7 +33,7 @@ class CardsList extends React.PureComponent<Props, State> {
   }
 
   render() {
-    const {catalogMoviesList} = this.props;
+    const {catalogMoviesList, onCardTitleClick} = this.props;
 
     return (
       <div className="catalog__movies-list">
@@ -41,6 +42,7 @@ class CardsList extends React.PureComponent<Props, State> {
             key={`${card.name}${i}`}
             card={card}
             onHoverFilm={this._handleHoverFilm}
+            onCardTitleClick={onCardTitleClick}
           />
         ))}
 

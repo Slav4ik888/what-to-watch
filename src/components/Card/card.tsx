@@ -6,18 +6,24 @@ import {CardType} from '../../types';
 type Props = {
   card: CardType;
   onHoverFilm: (card: CardType) => void;
+  onCardTitleClick: (card: CardType) => void;
 };
 
 
-const Card: React.FC<Props> = ({card, onHoverFilm}) => {
+const Card: React.FC<Props> = ({card, onHoverFilm, onCardTitleClick}) => {
   const handlePointerEnter = () => {
     onHoverFilm(card);
+  }
+
+  const handleCardTitleClick = () => {
+    onCardTitleClick(card);
   }
 
   return (
     <article 
       className="small-movie-card catalog__movies-card"
       onPointerEnter={handlePointerEnter}
+      onClick={handleCardTitleClick}
     >
       <div className="small-movie-card__image">
         <img src={card.previewImage} alt={card.name} width="280" height="175" />

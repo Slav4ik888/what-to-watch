@@ -18,6 +18,8 @@ describe(`<Card> tests`, () => {
   });
 
   const onHoverFilm = jest.fn();
+  const onCardTitleClick = jest.fn();
+
   // const onHoverFilm = jest.fn((...args) => [...args]);
   
   const renderComponent = (props = {}) => {
@@ -25,6 +27,7 @@ describe(`<Card> tests`, () => {
       <Card
           card={mockListFilms[0]}
           onHoverFilm={onHoverFilm}
+          onCardTitleClick={onCardTitleClick}
         />
     );
   };
@@ -37,8 +40,16 @@ describe(`<Card> tests`, () => {
     // `mouseOut` pointerenter mouseOver click pointerleave
     hover.simulate(`pointerenter`);
 
+    const click = component.find(`article.small-movie-card`);
+    click.simulate(`click`);
+
     expect(onHoverFilm).toHaveBeenCalledTimes(1);
     expect(onHoverFilm.mock.calls.length).toBe(1); // вроде как тоже что выше
     expect(onHoverFilm.mock.calls[0][0]).toEqual(mockListFilms[0]);
+    
+    expect(onCardTitleClick).toHaveBeenCalledTimes(1);
+    expect(onCardTitleClick.mock.calls[0][0]).toEqual(mockListFilms[0]);
+
+
   });
 });

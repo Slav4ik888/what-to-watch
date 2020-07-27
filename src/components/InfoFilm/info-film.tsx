@@ -4,6 +4,7 @@ import Header from '../Header/header';
 import Footer from '../Footer/footer';
 
 import {CardType} from '../../types';
+import {getFilmScoreDescription} from '../../utils/get-film-score-description';
 
 
 type Props = {
@@ -69,7 +70,7 @@ const InfoFilm: React.FC<Props> = ({card}) => {
             <div className="movie-rating">
               <div className="movie-rating__score">{card.rating}</div>
               <p className="movie-rating__meta">
-                <span className="movie-rating__level">Very good</span>
+                <span className="movie-rating__level">{getFilmScoreDescription(card.rating)}</span>
                 <span className="movie-rating__count">{card.scoresCount} ratings</span>
               </p>
             </div>

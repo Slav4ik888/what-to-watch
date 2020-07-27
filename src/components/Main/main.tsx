@@ -12,7 +12,7 @@ type Props = {
   genre: string,
   released: number,
   catalogMoviesList: CardType[],
-  onCardTitleClick: () => void,
+  onCardTitleClick: (card: CardType) => void,
 };
 
 
@@ -63,10 +63,7 @@ onCardTitleClick}) => {
               </div>
 
               <div className="movie-card__desc">
-                <h2 
-                  className="movie-card__title"
-                  onClick={onCardTitleClick}
-                >
+                <h2 className="movie-card__title">
                   {name}
                 </h2>
                 <p className="movie-card__meta">
@@ -130,7 +127,10 @@ onCardTitleClick}) => {
               </li>
             </ul>
 
-            <CardsList catalogMoviesList={catalogMoviesList} />
+            <CardsList
+              catalogMoviesList={catalogMoviesList}
+              onCardTitleClick={onCardTitleClick}
+            />
 
             <div className="catalog__more">
               <button className="catalog__button" type="button">Show more</button>

@@ -12,6 +12,7 @@ describe(`Snapshot <CardList/>`, () => {
       .create(
           <CardList
             catalogMoviesList={mockListFilms}
+            onCardTitleClick={() => {}}
           />
       )
       .toJSON();

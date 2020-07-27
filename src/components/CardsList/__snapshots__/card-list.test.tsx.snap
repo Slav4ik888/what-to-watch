@@ -6,6 +6,7 @@ exports[`Snapshot <CardList/> Render <CardList/> 1`] = `
 >
   <article
     className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
     onPointerEnter={[Function]}
   >
     <div
@@ -31,6 +32,7 @@ exports[`Snapshot <CardList/> Render <CardList/> 1`] = `
   </article>
   <article
     className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
     onPointerEnter={[Function]}
   >
     <div
@@ -56,6 +58,7 @@ exports[`Snapshot <CardList/> Render <CardList/> 1`] = `
   </article>
   <article
     className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
     onPointerEnter={[Function]}
   >
     <div
@@ -81,6 +84,7 @@ exports[`Snapshot <CardList/> Render <CardList/> 1`] = `
   </article>
   <article
     className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
     onPointerEnter={[Function]}
   >
     <div
@@ -106,6 +110,7 @@ exports[`Snapshot <CardList/> Render <CardList/> 1`] = `
   </article>
   <article
     className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
     onPointerEnter={[Function]}
   >
     <div
@@ -131,6 +136,7 @@ exports[`Snapshot <CardList/> Render <CardList/> 1`] = `
   </article>
   <article
     className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
     onPointerEnter={[Function]}
   >
     <div
@@ -156,6 +162,7 @@ exports[`Snapshot <CardList/> Render <CardList/> 1`] = `
   </article>
   <article
     className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
     onPointerEnter={[Function]}
   >
     <div
@@ -181,6 +188,7 @@ exports[`Snapshot <CardList/> Render <CardList/> 1`] = `
   </article>
   <article
     className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
     onPointerEnter={[Function]}
   >
     <div
@@ -206,6 +214,7 @@ exports[`Snapshot <CardList/> Render <CardList/> 1`] = `
   </article>
   <article
     className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
     onPointerEnter={[Function]}
   >
     <div
@@ -231,6 +240,7 @@ exports[`Snapshot <CardList/> Render <CardList/> 1`] = `
   </article>
   <article
     className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
     onPointerEnter={[Function]}
   >
     <div
@@ -256,6 +266,7 @@ exports[`Snapshot <CardList/> Render <CardList/> 1`] = `
   </article>
   <article
     className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
     onPointerEnter={[Function]}
   >
     <div
@@ -281,6 +292,7 @@ exports[`Snapshot <CardList/> Render <CardList/> 1`] = `
   </article>
   <article
     className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
     onPointerEnter={[Function]}
   >
     <div
@@ -306,6 +318,7 @@ exports[`Snapshot <CardList/> Render <CardList/> 1`] = `
   </article>
   <article
     className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
     onPointerEnter={[Function]}
   >
     <div
@@ -331,6 +344,7 @@ exports[`Snapshot <CardList/> Render <CardList/> 1`] = `
   </article>
   <article
     className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
     onPointerEnter={[Function]}
   >
     <div
@@ -356,6 +370,7 @@ exports[`Snapshot <CardList/> Render <CardList/> 1`] = `
   </article>
   <article
     className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
     onPointerEnter={[Function]}
   >
     <div
@@ -381,6 +396,7 @@ exports[`Snapshot <CardList/> Render <CardList/> 1`] = `
   </article>
   <article
     className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
     onPointerEnter={[Function]}
   >
     <div
@@ -406,6 +422,7 @@ exports[`Snapshot <CardList/> Render <CardList/> 1`] = `
   </article>
   <article
     className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
     onPointerEnter={[Function]}
   >
     <div
@@ -431,6 +448,7 @@ exports[`Snapshot <CardList/> Render <CardList/> 1`] = `
   </article>
   <article
     className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
     onPointerEnter={[Function]}
   >
     <div
@@ -456,6 +474,7 @@ exports[`Snapshot <CardList/> Render <CardList/> 1`] = `
   </article>
   <article
     className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
     onPointerEnter={[Function]}
   >
     <div
@@ -481,6 +500,7 @@ exports[`Snapshot <CardList/> Render <CardList/> 1`] = `
   </article>
   <article
     className="small-movie-card catalog__movies-card"
+    onClick={[Function]}
     onPointerEnter={[Function]}
   >
     <div

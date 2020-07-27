@@ -188,7 +188,6 @@ Array [
         >
           <h2
             className="movie-card__title"
-            onClick={[Function]}
           >
             Very good film
           </h2>
@@ -368,6 +367,7 @@ Array [
       >
         <article
           className="small-movie-card catalog__movies-card"
+          onClick={[Function]}
           onPointerEnter={[Function]}
         >
           <div
@@ -393,6 +393,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onClick={[Function]}
           onPointerEnter={[Function]}
         >
           <div
@@ -418,6 +419,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onClick={[Function]}
           onPointerEnter={[Function]}
         >
           <div
@@ -443,6 +445,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onClick={[Function]}
           onPointerEnter={[Function]}
         >
           <div
@@ -468,6 +471,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onClick={[Function]}
           onPointerEnter={[Function]}
         >
           <div
@@ -493,6 +497,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onClick={[Function]}
           onPointerEnter={[Function]}
         >
           <div
@@ -518,6 +523,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onClick={[Function]}
           onPointerEnter={[Function]}
         >
           <div
@@ -543,6 +549,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onClick={[Function]}
           onPointerEnter={[Function]}
         >
           <div
@@ -568,6 +575,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onClick={[Function]}
           onPointerEnter={[Function]}
         >
           <div
@@ -593,6 +601,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onClick={[Function]}
           onPointerEnter={[Function]}
         >
           <div
@@ -618,6 +627,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onClick={[Function]}
           onPointerEnter={[Function]}
         >
           <div
@@ -643,6 +653,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onClick={[Function]}
           onPointerEnter={[Function]}
         >
           <div
@@ -668,6 +679,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onClick={[Function]}
           onPointerEnter={[Function]}
         >
           <div
@@ -693,6 +705,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onClick={[Function]}
           onPointerEnter={[Function]}
         >
           <div
@@ -718,6 +731,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onClick={[Function]}
           onPointerEnter={[Function]}
         >
           <div
@@ -743,6 +757,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onClick={[Function]}
           onPointerEnter={[Function]}
         >
           <div
@@ -768,6 +783,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onClick={[Function]}
           onPointerEnter={[Function]}
         >
           <div
@@ -793,6 +809,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onClick={[Function]}
           onPointerEnter={[Function]}
         >
           <div
@@ -818,6 +835,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onClick={[Function]}
           onPointerEnter={[Function]}
         >
           <div
@@ -843,6 +861,7 @@ Array [
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onClick={[Function]}
           onPointerEnter={[Function]}
         >
           <div
@@ -886,6 +905,7 @@ Array [
       >
         <a
           className="logo__link logo__link--light"
+          href="main.html"
         >
           <span
             className="logo__letter logo__letter--1"
@@ -908,7 +928,7 @@ Array [
         className="copyright"
       >
         <p>
-          © 2019 What to watch Ltd.
+          © 2020 What to watch Slav4ik888 Ltd.
         </p>
       </div>
     </footer>

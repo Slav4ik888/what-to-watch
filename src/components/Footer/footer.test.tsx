@@ -1,23 +1,18 @@
 import * as React from "react";
 import * as renderer from "react-test-renderer";
 
-import Card from './card';
+import Footer from './footer';
 
 import {mockListFilms} from '../../mocks/mockListFilms';
 
 
-describe(`Snapshot <CardList/>`, () => {
-  it(`Render <CardList/>`, () => {
+describe(`Snapshot <Footer/>`, () => {
+  it(`Render <Footer/>`, () => {
     const tree = renderer
       .create(
-          <Card
-            card={mockListFilms[0]}
-            onHoverFilm={() => {}}
-            onCardTitleClick={() => {}}
-          />
+          <Footer/>
       )
       .toJSON();
-
     expect(tree).toMatchSnapshot();
   });
 });
