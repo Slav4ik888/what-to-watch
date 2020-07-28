@@ -4,70 +4,68 @@ import {CardType} from '../../types';
 
 
 interface Props {
-  isPlaying: boolean;
+  isHover: boolean;
   card: CardType;
 };
 
 interface State {
-  isSecond: boolean;
+  isPlaying: boolean;
 }
 
 class VideoPlayer extends React.PureComponent<Props, State> {
   private videoRef: React.RefObject<HTMLVideoElement>;
-
+  private _isSecond: any | null;
+  
   constructor(props) {
     super(props);
-    this._isSecond = this._isSecond.bind(this);
+    this._isSecond = null;
     this.videoRef = React.createRef();
 
     this.state = {
-      isSecond: false,
+      isPlaying: false,
     };
   }
 
   componentDidMount() {
     const video = this.videoRef.current;
-
-    video.src = this.props.card.previewVideoLink;
-    video.poster = this.props.card.previewImage;
-    video.width = 280;
-    video.height = 175;
-    video.muted = true;
-  }
-
-
-  _isSecond() {
-    setTimeout(() => {
-      this.setState({isSecond: true});
-      // console.log('isSecond: true: ');
-    }, 1000);
+    if (video) {
+      video.src = this.props.card.previewVideoLink;
+      video.poster = this.props.card.previewImage;
+      video.width = 280;
+      video.height = 175;
+      video.muted = true;
+    }
   }
 
 
   componentDidUpdate() {
     const video = this.videoRef.current;
 
-    if (this.props.isPlaying) {
+    if (this.props.isHover) {
       // console.log(`hover`);
-      this._isSecond();
+      this._isSecond = setTimeout(() => {
+        this.setState({isPlaying: true});
+      }, 1000);
     } else {
-      // console.log(`stop`);
+      // console.log(`hoverOut`);
       video.load();
-      this.setState({isSecond: false});
+      this.setState({isPlaying: false});
     }
 
-    if (this.state.isSecond && this.props.isPlaying) {
+    if (this.state.isPlaying && this.props.isHover) {
       // console.log(`play`);
       video.play();
     } else {
       // console.log(`stop`);
       video.load();
-      this.setState({isSecond: false});
+      this.setState({isPlaying: false});
     }
   }
   
 
   componentWillUnmount() {
+    clearTimeout(this._isSecond);
+
     const video = this.videoRef.current;
     if (video) {
       video.src = null;

@@ -1,18 +1,21 @@
 import * as React from 'react';
 
 import Header from '../Header/header';
+import MovieTabs from './MovieTabs/movie-tabs';
+import Card from '../Card/card';
 import Footer from '../Footer/footer';
 
+import {mockListFilms} from '../../mocks/mockListFilms';
 import {CardType} from '../../types';
-import {getFilmScoreDescription} from '../../utils/get-film-score-description';
 
 
 type Props = {
   card: CardType;
+  onCardTitleClick: (card: CardType) => void;
 };
 
 
-const InfoFilm: React.FC<Props> = ({card}) => {
+const InfoFilm: React.FC<Props> = ({card, onCardTitleClick}) => {
   return (
     <>
       <section className="movie-card movie-card--full">
@@ -53,43 +56,9 @@ const InfoFilm: React.FC<Props> = ({card}) => {
           </div>
 
           <div className="movie-card__desc">
-            <nav className="movie-nav movie-card__nav">
-              <ul className="movie-nav__list">
-                <li className="movie-nav__item movie-nav__item--active">
-                  <a href="#" className="movie-nav__link">Overview</a>
-                </li>
-                <li className="movie-nav__item">
-                  <a href="#" className="movie-nav__link">Details</a>
-                </li>
-                <li className="movie-nav__item">
-                  <a href="#" className="movie-nav__link">Reviews</a>
-                </li>
-              </ul>
-            </nav>
+            <MovieTabs card={card}/>
 
-            <div className="movie-rating">
-              <div className="movie-rating__score">{card.rating}</div>
-              <p className="movie-rating__meta">
-                <span className="movie-rating__level">{getFilmScoreDescription(card.rating)}</span>
-                <span className="movie-rating__count">{card.scoresCount} ratings</span>
-              </p>
-            </div>
-
-            <div className="movie-card__text">
-              <p>In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave's friend and protege.</p>
-
-              <p>Gustave prides himself on providing first-class service to the hotel's guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave's lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder.</p>
-
-              <p className="movie-card__director"><strong>Director: {card.director}</strong></p>
-
-              <p className="movie-card__starring">
-                <strong>Starring: 
-                  {card.starring.map((actor, i) => (
-                    card.starring.length === i+1 ? ` ${actor}`  : ` ${actor},`
-                  ))}
-                </strong>
-              </p>
-            </div>
+            
           </div>
         </div>
       </div>
@@ -100,41 +69,17 @@ const InfoFilm: React.FC<Props> = ({card}) => {
         <h2 className="catalog__title">More like this</h2>
 
         <div className="catalog__movies-list">
-          <article className="small-movie-card catalog__movies-card">
-            <div className="small-movie-card__image">
-              <img src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg" alt="Fantastic Beasts: The Crimes of Grindelwald" width="280" height="175" />
-            </div>
-            <h3 className="small-movie-card__title">
-              <a className="small-movie-card__link" href="movie-page.html">Fantastic Beasts: The Crimes of Grindelwald</a>
-            </h3>
-          </article>
-
-          <article className="small-movie-card catalog__movies-card">
-            <div className="small-movie-card__image">
-              <img src="img/bohemian-rhapsody.jpg" alt="Bohemian Rhapsody" width="280" height="175" />
-            </div>
-            <h3 className="small-movie-card__title">
-              <a className="small-movie-card__link" href="movie-page.html">Bohemian Rhapsody</a>
-            </h3>
-          </article>
-
-          <article className="small-movie-card catalog__movies-card">
-            <div className="small-movie-card__image">
-              <img src="img/macbeth.jpg" alt="Macbeth" width="280" height="175" />
-            </div>
-            <h3 className="small-movie-card__title">
-              <a className="small-movie-card__link" href="movie-page.html">Macbeth</a>
-            </h3>
-          </article>
-
-          <article className="small-movie-card catalog__movies-card">
-            <div className="small-movie-card__image">
-              <img src="img/aviator.jpg" alt="Aviator" width="280" height="175" />
-            </div>
-            <h3 className="small-movie-card__title">
-              <a className="small-movie-card__link" href="movie-page.html">Aviator</a>
-            </h3>
-          </article>
+          {mockListFilms
+            .filter((film) => film.genre === card.genre)
+            .slice(0, 4)
+            .map((card, i) => (
+              <Card
+                key={`${card.name}${i}`}
+                card={card}
+                onHoverFilm={null}
+                onCardTitleClick={onCardTitleClick}
+              />
+          ))}
         </div>
       </section>
 

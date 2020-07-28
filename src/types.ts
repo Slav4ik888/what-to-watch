@@ -6,7 +6,7 @@ export interface CardType {
   backgroundImage: string,
   backgroundColor: string,
   videoLink: string,
-  previewVideoLink: string,
+  previewVideoLink: string | null,
   description: string,
   rating: number,
   scoresCount: number,
@@ -16,4 +16,21 @@ export interface CardType {
   genre: string,
   released: number,
   isFavorite: boolean,
+};
+
+export interface ReviewType {
+  id: number,
+  user: {
+    id: number,
+    name: string,
+  },
+  rating: number,
+  comment: string,
+  date: string,
+};
+
+export interface TitleFilm {
+  name: string,
+  genre: string,
+  released: number,
 };

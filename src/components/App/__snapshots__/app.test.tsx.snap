@@ -189,7 +189,7 @@ Array [
           <h2
             className="movie-card__title"
           >
-            Very good film
+            The Grand Budapest Hotel
           </h2>
           <p
             className="movie-card__meta"
@@ -202,7 +202,7 @@ Array [
             <span
               className="movie-card__year"
             >
-              2020
+              2014
             </span>
           </p>
           <div
@@ -369,23 +369,19 @@ Array [
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
           onPointerEnter={[Function]}
+          onPointerLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Fantastic Beasts: The Crimes of Grindelwald"
-              height="175"
-              src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
-              width="280"
-            />
+            <video />
           </div>
           <h3
             className="small-movie-card__title"
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
             >
               Fantastic Beasts: The Crimes of Grindelwald
             </a>
@@ -395,23 +391,19 @@ Array [
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
           onPointerEnter={[Function]}
+          onPointerLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Bohemian Rhapsody"
-              height="175"
-              src="img/bohemian-rhapsody.jpg"
-              width="280"
-            />
+            <video />
           </div>
           <h3
             className="small-movie-card__title"
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
             >
               Bohemian Rhapsody
             </a>
@@ -421,23 +413,19 @@ Array [
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
           onPointerEnter={[Function]}
+          onPointerLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Macbeth"
-              height="175"
-              src="img/macbeth.jpg"
-              width="280"
-            />
+            <video />
           </div>
           <h3
             className="small-movie-card__title"
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
             >
               Macbeth
             </a>
@@ -447,23 +435,19 @@ Array [
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
           onPointerEnter={[Function]}
+          onPointerLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Aviator"
-              height="175"
-              src="img/aviator.jpg"
-              width="280"
-            />
+            <video />
           </div>
           <h3
             className="small-movie-card__title"
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
             >
               Aviator
             </a>
@@ -473,23 +457,19 @@ Array [
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
           onPointerEnter={[Function]}
+          onPointerLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="We need to talk about Kevin"
-              height="175"
-              src="img/we-need-to-talk-about-kevin.jpg"
-              width="280"
-            />
+            <video />
           </div>
           <h3
             className="small-movie-card__title"
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
             >
               We need to talk about Kevin
             </a>
@@ -499,23 +479,19 @@ Array [
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
           onPointerEnter={[Function]}
+          onPointerLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="What We Do in the Shadows"
-              height="175"
-              src="img/what-we-do-in-the-shadows.jpg"
-              width="280"
-            />
+            <video />
           </div>
           <h3
             className="small-movie-card__title"
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
             >
               What We Do in the Shadows
             </a>
@@ -525,23 +501,19 @@ Array [
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
           onPointerEnter={[Function]}
+          onPointerLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Revenant"
-              height="175"
-              src="img/revenant.jpg"
-              width="280"
-            />
+            <video />
           </div>
           <h3
             className="small-movie-card__title"
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
             >
               Revenant
             </a>
@@ -551,23 +523,19 @@ Array [
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
           onPointerEnter={[Function]}
+          onPointerLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Johnny English"
-              height="175"
-              src="img/johnny-english.jpg"
-              width="280"
-            />
+            <video />
           </div>
           <h3
             className="small-movie-card__title"
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
             >
               Johnny English
             </a>
@@ -577,23 +545,19 @@ Array [
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
           onPointerEnter={[Function]}
+          onPointerLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Shutter Island"
-              height="175"
-              src="img/shutter-island.jpg"
-              width="280"
-            />
+            <video />
           </div>
           <h3
             className="small-movie-card__title"
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
             >
               Shutter Island
             </a>
@@ -603,23 +567,19 @@ Array [
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
           onPointerEnter={[Function]}
+          onPointerLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Pulp Fiction"
-              height="175"
-              src="img/pulp-fiction.jpg"
-              width="280"
-            />
+            <video />
           </div>
           <h3
             className="small-movie-card__title"
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
             >
               Pulp Fiction
             </a>
@@ -629,23 +589,19 @@ Array [
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
           onPointerEnter={[Function]}
+          onPointerLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="No Country for Old Men"
-              height="175"
-              src="img/no-country-for-old-men.jpg"
-              width="280"
-            />
+            <video />
           </div>
           <h3
             className="small-movie-card__title"
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
             >
               No Country for Old Men
             </a>
@@ -655,23 +611,19 @@ Array [
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
           onPointerEnter={[Function]}
+          onPointerLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Snatch"
-              height="175"
-              src="img/snatch.jpg"
-              width="280"
-            />
+            <video />
           </div>
           <h3
             className="small-movie-card__title"
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
             >
               Snatch
             </a>
@@ -681,23 +633,19 @@ Array [
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
           onPointerEnter={[Function]}
+          onPointerLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Moonrise Kingdom"
-              height="175"
-              src="img/moonrise-kingdom.jpg"
-              width="280"
-            />
+            <video />
           </div>
           <h3
             className="small-movie-card__title"
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
             >
               Moonrise Kingdom
             </a>
@@ -707,23 +655,19 @@ Array [
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
           onPointerEnter={[Function]}
+          onPointerLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Seven Years in Tibet"
-              height="175"
-              src="img/seven-years-in-tibet.jpg"
-              width="280"
-            />
+            <video />
           </div>
           <h3
             className="small-movie-card__title"
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
             >
               Seven Years in Tibet
             </a>
@@ -733,23 +677,19 @@ Array [
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
           onPointerEnter={[Function]}
+          onPointerLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Midnight Special"
-              height="175"
-              src="img/midnight-special.jpg"
-              width="280"
-            />
+            <video />
           </div>
           <h3
             className="small-movie-card__title"
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
             >
               Midnight Special
             </a>
@@ -759,23 +699,19 @@ Array [
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
           onPointerEnter={[Function]}
+          onPointerLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="War of the Worlds"
-              height="175"
-              src="img/war-of-the-worlds.jpg"
-              width="280"
-            />
+            <video />
           </div>
           <h3
             className="small-movie-card__title"
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
             >
               War of the Worlds
             </a>
@@ -785,23 +721,19 @@ Array [
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
           onPointerEnter={[Function]}
+          onPointerLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Dardjeeling Limited"
-              height="175"
-              src="img/dardjeeling-limited.jpg"
-              width="280"
-            />
+            <video />
           </div>
           <h3
             className="small-movie-card__title"
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
             >
               Dardjeeling Limited
             </a>
@@ -811,23 +743,19 @@ Array [
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
           onPointerEnter={[Function]}
+          onPointerLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Orlando"
-              height="175"
-              src="img/orlando.jpg"
-              width="280"
-            />
+            <video />
           </div>
           <h3
             className="small-movie-card__title"
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
             >
               Orlando
             </a>
@@ -837,23 +765,19 @@ Array [
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
           onPointerEnter={[Function]}
+          onPointerLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Mindhunter"
-              height="175"
-              src="img/mindhunter.jpg"
-              width="280"
-            />
+            <video />
           </div>
           <h3
             className="small-movie-card__title"
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
             >
               Mindhunter
             </a>
@@ -863,23 +787,19 @@ Array [
           className="small-movie-card catalog__movies-card"
           onClick={[Function]}
           onPointerEnter={[Function]}
+          onPointerLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
-            <img
-              alt="Midnight Special"
-              height="175"
-              src="img/midnight-special.jpg"
-              width="280"
-            />
+            <video />
           </div>
           <h3
             className="small-movie-card__title"
           >
             <a
               className="small-movie-card__link"
-              href="#"
+              href="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
             >
               Midnight Special
             </a>

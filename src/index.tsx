@@ -5,13 +5,13 @@ import App from './components/App/app';
 
 import {mockListFilms} from './mocks/mockListFilms';
 import {CardType} from './types';
+import {titleFilm} from './consts';
 
-
-const name = `The Grand Budapest Hotel`;
-const genre = `Comedy`;
-const released = 2014;
 
 
 ReactDOM.render(
-    <App name={name} genre={genre} released={released} catalogMoviesList={mockListFilms}/>
-    , document.getElementById(`root`));
+    <App
+      titleFilm={titleFilm}
+      catalogMoviesList={mockListFilms}
+    />
+  , document.getElementById(`root`));

@@ -4,19 +4,17 @@ import Header from '../Header/header';
 import CardsList from'../CardsList/cards-list';
 import Footer from '../Footer/footer';
 
-import {CardType} from '../../types';
+import {CardType, TitleFilm} from '../../types';
 
 
 type Props = {
-  name: string,
-  genre: string,
-  released: number,
+  titleFilm: TitleFilm,
   catalogMoviesList: CardType[],
   onCardTitleClick: (card: CardType) => void,
 };
 
 
-const Main: React.FC<Props> = ({name, genre, released, catalogMoviesList,
+const Main: React.FC<Props> = ({titleFilm: {name, genre, released}, catalogMoviesList,
 onCardTitleClick}) => {
   return (
     <>

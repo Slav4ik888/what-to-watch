@@ -1,22 +1,20 @@
 import * as React from "react";
 import * as renderer from "react-test-renderer";
 
-import InfoFilm from './info-film';
+import MovieTabs from './movie-tabs';
 
-import {mockListFilms} from '../../mocks/mockListFilms';
+import {mockListFilms} from '../../../mocks/mockListFilms';
 
 
-describe(`Snapshot <InfoFilm/>`, () => {
-  it(`Render <InfoFilm/> with card`, () => {
+describe(`Snapshot <MovieTabs/>`, () => {
+  it(`Render <MovieTabs/> `, () => {
     const tree = renderer
       .create(
-          <InfoFilm
+          <MovieTabs
             card={mockListFilms[0]}
-            onCardTitleClick={() => {}}
           />
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
-
 });

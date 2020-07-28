@@ -4,6 +4,7 @@ import * as renderer from "react-test-renderer";
 import Main from './main';
 
 import {mockListFilms} from '../../mocks/mockListFilms';
+import {titleFilm} from '../../consts';
 
 
 describe(`Snapshot <Main/>`, () => {
@@ -11,9 +12,7 @@ describe(`Snapshot <Main/>`, () => {
     const tree = renderer
       .create(
           <Main
-            name={`Very good film`}
-            genre={`Comedy`}
-            released={2020}
+            titleFilm={titleFilm}
             catalogMoviesList={mockListFilms}
             onCardTitleClick={() => {}}
           />

@@ -4,14 +4,12 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Main from '../Main/main';
 import InfoFilm from '../InfoFilm/info-film';
 
-import {CardType} from '../../types';
+import {CardType, TitleFilm} from '../../types';
 import {appRoute} from '../../consts';
 
 
 interface Props {
-  name: string,
-  genre: string,
-  released: number,
+  titleFilm: TitleFilm,
   catalogMoviesList: CardType[],
 };
 
@@ -41,16 +39,14 @@ class App extends React.PureComponent<Props, State> {
 
   _renderMainPage() {
     const {activeFilm} = this.state;
-    const {name, genre, released, catalogMoviesList} = this.props;
+    const {titleFilm, catalogMoviesList} = this.props;
 
     if (activeFilm) {
-      return <InfoFilm card={activeFilm}/>
+      return <InfoFilm card={activeFilm} onCardTitleClick={this._handleCardTitleClick}/>
     } else {
       return (
         <Main
-        name={name}
-        genre={genre}
-        released={released}
+        titleFilm={titleFilm}
         catalogMoviesList={catalogMoviesList}
         onCardTitleClick={this._handleCardTitleClick}
       />
@@ -74,7 +70,7 @@ class App extends React.PureComponent<Props, State> {
             </Route> */}
 
             <Route exact path="/dev-info">
-              <InfoFilm card={catalogMoviesList[0]}/>
+              <InfoFilm card={catalogMoviesList[0]} onCardTitleClick={this._handleCardTitleClick}/>
             </Route>
           </Switch>
         </BrowserRouter>

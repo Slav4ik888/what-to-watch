@@ -4,6 +4,8 @@ import * as renderer from "react-test-renderer";
 import App from './app';
 
 import {mockListFilms} from '../../mocks/mockListFilms';
+import {titleFilm} from '../../consts';
+
 
 
 describe(`Snapshot <App/>`, () => {
@@ -11,9 +13,7 @@ describe(`Snapshot <App/>`, () => {
     const tree = renderer
       .create(
           <App
-            name={`Very good film`}
-            genre={`Comedy`}
-            released={2020}
+            titleFilm={titleFilm}
             catalogMoviesList={mockListFilms}
           />
       )

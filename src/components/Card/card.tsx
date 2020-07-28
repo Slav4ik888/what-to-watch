@@ -7,12 +7,12 @@ import {CardType} from '../../types';
 
 interface Props {
   card: CardType;
-  onHoverFilm: (card: CardType) => void;
+  onHoverFilm: (card: CardType) => void | null;
   onCardTitleClick: (card: CardType) => void;
 };
 
 interface State {
-  isPlaying: boolean;
+  isHover: boolean;
 }
 
 class Card extends React.PureComponent<Props, State> {
@@ -23,16 +23,16 @@ class Card extends React.PureComponent<Props, State> {
     this.handleCardTitleClick = this.handleCardTitleClick.bind(this);
 
     this.state = {
-      isPlaying: false,
+      isHover: false,
     };
   }
 
   handlePointerEnter = () => {
-    this.props.onHoverFilm(this.props.card)
-    this.setState({isPlaying: true})
+    if (this.props.onHoverFilm) this.props.onHoverFilm(this.props.card)
+    this.setState({isHover: true})
   }
   handlePointerLeave = () => {
-    this.setState({isPlaying: false})
+    this.setState({isHover: false})
   }
 
   handleCardTitleClick = () => {
@@ -50,7 +50,7 @@ class Card extends React.PureComponent<Props, State> {
         <div className="small-movie-card__image">
           <VideoPlayer
             card={this.props.card}
-            isPlaying={this.state.isPlaying}
+            isHover={this.state.isHover}
           />
           {/* <img src={card.previewImage} alt={card.name} width="280" height="175" /> */}
         </div>

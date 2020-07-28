@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {shallow, configure} from 'enzyme';
+import {mount, configure} from 'enzyme';
 import * as Adapter from 'enzyme-adapter-react-16';
 
 import VideoPlayer from './video-player';
@@ -9,25 +9,26 @@ import {mockListFilms} from '../../mocks/mockListFilms';
 
 configure({adapter: new Adapter()});
 
+
 describe(`<VideoPlayer> tests`, () => {
 
-  it(`<VideoPlayer/> isPlaying={true}`, () => {
-    const videoPlayer = shallow(
+  it(`<VideoPlayer/> isHover={true}`, () => {
+    const videoPlayer = mount(
       <VideoPlayer
         card={mockListFilms[0]}
-        isPlaying={true}
+        isHover={true}
       />
     );
-    expect(videoPlayer.props().isPlaying).toBe(true); 
+    expect(videoPlayer.props().isHover).toBe(true); 
   });
 
-  it(`<VideoPlayer/> isPlaying={false}`, () => {
-    const videoPlayer = shallow(
+  it(`<VideoPlayer/> isHover={false}`, () => {
+    const videoPlayer = mount(
       <VideoPlayer
         card={mockListFilms[0]}
-        isPlaying={false}
+        isHover={false}
       />
     );
-    expect(videoPlayer.props().isPlaying).toBe(false); 
+    expect(videoPlayer.props().isHover).toBe(false); 
   });
 });
