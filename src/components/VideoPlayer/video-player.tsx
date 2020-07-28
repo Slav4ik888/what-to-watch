@@ -9,7 +9,7 @@ interface Props {
 };
 
 interface State {
-  isPlayingVideo: boolean;
+  isSecond: boolean;
 }
 
 class VideoPlayer extends React.PureComponent<Props, State> {
@@ -17,11 +17,11 @@ class VideoPlayer extends React.PureComponent<Props, State> {
 
   constructor(props) {
     super(props);
-
+    this._isSecond = this._isSecond.bind(this);
     this.videoRef = React.createRef();
 
     this.state = {
-      isPlayingVideo: false,
+      isSecond: false,
     };
   }
 
@@ -32,47 +32,59 @@ class VideoPlayer extends React.PureComponent<Props, State> {
     video.poster = this.props.card.previewImage;
     video.width = 280;
     video.height = 175;
-    
-
-    // video.oncanplaythrough = () => this.setState({
-    //   isLoading: false,
-    // });
-
-    video.onplay = () => {
-      this.setState({
-        isPlayingVideo: true,
-      });
-    };
-
-    video.onpause = () => this.setState({
-      isPlayingVideo: false,
-    });
-
-    // video.ontimeupdate = () => this.setState({
-    //   progress: Math.floor(audio.currentTime),
-    // });
+    video.muted = true;
   }
+
+
+  _isSecond() {
+    setTimeout(() => {
+      this.setState({isSecond: true});
+      // console.log('isSecond: true: ');
+    }, 1000);
+  }
+
 
   componentDidUpdate() {
     const video = this.videoRef.current;
 
     if (this.props.isPlaying) {
+      // console.log(`hover`);
+      this._isSecond();
+    } else {
+      // console.log(`stop`);
+      video.load();
+      this.setState({isSecond: false});
+    }
+
+    if (this.state.isSecond && this.props.isPlaying) {
+      // console.log(`play`);
       video.play();
     } else {
-      video.pause();
+      // console.log(`stop`);
+      video.load();
+      this.setState({isSecond: false});
     }
   }
   
+
+  componentWillUnmount() {
+    const video = this.videoRef.current;
+    if (video) {
+      video.src = null;
+      video.poster = null;
+      video.width = null;
+      video.height = null;
+      video.src = ``;
+    }
+  }
+
   render() {
     return (
       <>
         <video
-          muted
+          // className="player__video"
           ref={this.videoRef}
         />
-        {/* poster={card.previewImage} width="280" height="175"  autoplay="autoplay">
-          <source src={card.previewVideoLink} />
-        </video> */}
       </>
     )
   }

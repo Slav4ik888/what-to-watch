@@ -1,8 +1,8 @@
-import * as React from "react";
-import {shallow, configure} from "enzyme";
-import * as Adapter from "enzyme-adapter-react-16";
+import * as React from 'react';
+import {shallow, configure} from 'enzyme';
+import * as Adapter from 'enzyme-adapter-react-16';
 
-import Card from "./card";
+import Card from './card';
 
 import {mockListFilms} from '../../mocks/mockListFilms';
 
