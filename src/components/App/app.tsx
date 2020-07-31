@@ -1,8 +1,11 @@
 import * as React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {connect} from 'react-redux';
 
 import Main from '../Main/main';
 import InfoFilm from '../InfoFilm/info-film';
+
+import {getGenresList, getFilmCards} from '../../redusers/watch/selectors';
 
 import {CardType, TitleFilm} from '../../types';
 import {appRoute} from '../../consts';
@@ -11,6 +14,8 @@ import {appRoute} from '../../consts';
 interface Props {
   titleFilm: TitleFilm,
   catalogMoviesList: CardType[],
+  genreList: string[],
+  filmsCards: CardType[],
 };
 
 interface State {
@@ -39,7 +44,9 @@ class App extends React.PureComponent<Props, State> {
 
   _renderMainPage() {
     const {activeFilm} = this.state;
-    const {titleFilm, catalogMoviesList} = this.props;
+    const {titleFilm, catalogMoviesList, genreList, filmsCards} = this.props;
+    console.log('filmsCards: ', filmsCards);
+    console.log('genreList: ', genreList);
 
     if (activeFilm) {
       return <InfoFilm card={activeFilm} onCardTitleClick={this._handleCardTitleClick}/>
@@ -80,4 +87,14 @@ class App extends React.PureComponent<Props, State> {
   };
 };
 
-export default App;
+const mapStateToProps = (state) => ({
+  genreList: getGenresList(state),
+  filmsCards: getFilmCards(state),
+});
+
+// const mapDispatchToProps = (dispatch) => ({
+// });
+
+export {App};
+export default connect(mapStateToProps)(App);
+

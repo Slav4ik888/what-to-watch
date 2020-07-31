@@ -134,7 +134,7 @@ export const mockListFilms = [
     director: `Wes Andreson`,
     starring: [`Bill Murray`, `Edward Norton`, `Jude Law`, `Willem Dafoe`, `Saoirse Ronan`],
     runTime: 99,
-    genre: `Comedy`,
+    genre: `Romance`,
     released: 2014,
     isFavorite: false
   },
@@ -234,7 +234,7 @@ export const mockListFilms = [
     director: `Wes Andreson`,
     starring: [`Bill Murray`, `Edward Norton`, `Jude Law`, `Willem Dafoe`, `Saoirse Ronan`],
     runTime: 99,
-    genre: `Fantastic`,
+    genre: `Romance`,
     released: 2014,
     isFavorite: false
   },
@@ -294,7 +294,7 @@ export const mockListFilms = [
     director: `Wes Andreson`,
     starring: [`Bill Murray`, `Edward Norton`, `Jude Law`, `Willem Dafoe`, `Saoirse Ronan`],
     runTime: 99,
-    genre: `Detective`,
+    genre: `Sexy`,
     released: 2014,
     isFavorite: false
   },
