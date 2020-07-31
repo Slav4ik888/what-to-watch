@@ -5,17 +5,15 @@ import {connect} from 'react-redux';
 import Main from '../Main/main';
 import InfoFilm from '../InfoFilm/info-film';
 
-import {getGenresList, getFilmCards} from '../../redusers/watch/selectors';
+// import {getGenresList, getFilmCards, getFiltredList} from '../../redusers/watch/selectors';
 
 import {CardType, TitleFilm} from '../../types';
-import {appRoute} from '../../consts';
+import {AppRoute} from '../../consts';
 
 
 interface Props {
   titleFilm: TitleFilm,
-  catalogMoviesList: CardType[],
-  genreList: string[],
-  filmsCards: CardType[],
+  // filtredList: CardType[],
 };
 
 interface State {
@@ -44,9 +42,7 @@ class App extends React.PureComponent<Props, State> {
 
   _renderMainPage() {
     const {activeFilm} = this.state;
-    const {titleFilm, catalogMoviesList, genreList, filmsCards} = this.props;
-    console.log('filmsCards: ', filmsCards);
-    console.log('genreList: ', genreList);
+    const {titleFilm} = this.props;
 
     if (activeFilm) {
       return <InfoFilm card={activeFilm} onCardTitleClick={this._handleCardTitleClick}/>
@@ -54,7 +50,6 @@ class App extends React.PureComponent<Props, State> {
       return (
         <Main
         titleFilm={titleFilm}
-        catalogMoviesList={catalogMoviesList}
         onCardTitleClick={this._handleCardTitleClick}
       />
       )
@@ -62,13 +57,12 @@ class App extends React.PureComponent<Props, State> {
   }
 
   render() {
-    const {catalogMoviesList} = this.props;
     
     return (
       <>
         <BrowserRouter>
           <Switch>
-            <Route exact path={appRoute.ROOT}>
+            <Route exact path={AppRoute.ROOT}>
               {this._renderMainPage()}
             </Route>
 
@@ -76,9 +70,9 @@ class App extends React.PureComponent<Props, State> {
               <InfoFilm card={activeFilm}/>
             </Route> */}
 
-            <Route exact path="/dev-info">
+            {/* <Route exact path="/dev-info">
               <InfoFilm card={catalogMoviesList[0]} onCardTitleClick={this._handleCardTitleClick}/>
-            </Route>
+            </Route> */}
           </Switch>
         </BrowserRouter>
         
@@ -87,14 +81,15 @@ class App extends React.PureComponent<Props, State> {
   };
 };
 
-const mapStateToProps = (state) => ({
-  genreList: getGenresList(state),
-  filmsCards: getFilmCards(state),
-});
+// const mapStateToProps = (state) => ({
+  // filmsCards: getFilmCards(state),
+  // filtredList: getFiltredList(state),
+// });
 
 // const mapDispatchToProps = (dispatch) => ({
 // });
 
-export {App};
-export default connect(mapStateToProps)(App);
+// export {App};
+// export default connect(mapStateToProps)(App);
 
+export default App;

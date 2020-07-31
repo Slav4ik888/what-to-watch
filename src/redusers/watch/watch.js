@@ -3,7 +3,7 @@ import {mockListFilms} from '../../mocks/mockListFilms';
 
 
 const initState = {
-  selectedGenre: `Fantastic`,
+  selectedGenre: `Comedy`,
   filmCards: mockListFilms,
 };
 

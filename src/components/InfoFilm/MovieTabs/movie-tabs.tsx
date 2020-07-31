@@ -6,7 +6,7 @@ import Details from '../Details/details';
 import Reviews from  '../Reviews/reviews';
 
 import {CardType} from '../../../types';
-import {movieTabs} from '../../../consts';
+import {MovieTabNames} from '../../../consts';
 
 
 interface Props {
@@ -43,7 +43,7 @@ class MovieTabs extends React.PureComponent<Props, State> {
       <>
         <nav className="movie-nav movie-card__nav">
           <ul className="movie-nav__list">
-            {movieTabs.map((tab, i) => (
+            {MovieTabNames.map((tab, i) => (
               <li 
                 id={`i${i}`}
                 key={tab}

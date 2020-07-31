@@ -1,10 +1,14 @@
-export const appRoute = {
+export const AppRoute = {
   ROOT: `/`,
   FILM: `/film`,
 };
 
-export const movieTabs = [
+export const MovieTabNames = [
   `Overview`, `Details`, `Reviews`,
+];
+
+export const AllGenreList = [
+  `All genres`, `Comedies`, `Crime`, `Documentary`, `Dramas`, `Horror`, `Kids & Family`, `Romance`, `Sci-Fi`, `Thrillers`,
 ];
 
 export const titleFilm = {

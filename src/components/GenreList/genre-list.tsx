@@ -1,45 +1,22 @@
 import * as React from 'react';
 
 
-const genres = [
-  `All genres`, `Comedies`, `Crime`, `Documentary`, `Dramas`, `Horror`, `Kids & Family`, `Romance`, `Sci-Fi`, `Thrillers`,
-];
+type Props = {
+  genreList: string[],
 
+};
 
-const GenreList: React.FC = () => {
+const GenreList: React.FC<Props> = ({genreList}) => {
   return (
     <>
       <ul className="catalog__genres-list">
-        <li className="catalog__genres-item catalog__genres-item--active">
-          <a href="#" className="catalog__genres-link">All genres</a>
+        {genreList
+          .slice(0, 9)
+          .map((genre, i) => <li key={genre + i}
+          className={`catalog__genres-item ${i === 0 && "catalog__genres-item--active"}`}>
+          <a href="#" className="catalog__genres-link">{genre}</a>
         </li>
-        <li className="catalog__genres-item">
-          <a href="#" className="catalog__genres-link">Comedies</a>
-        </li>
-        <li className="catalog__genres-item">
-          <a href="#" className="catalog__genres-link">Crime</a>
-        </li>
-        <li className="catalog__genres-item">
-          <a href="#" className="catalog__genres-link">Documentary</a>
-        </li>
-        <li className="catalog__genres-item">
-          <a href="#" className="catalog__genres-link">Dramas</a>
-        </li>
-        <li className="catalog__genres-item">
-          <a href="#" className="catalog__genres-link">Horror</a>
-        </li>
-        <li className="catalog__genres-item">
-          <a href="#" className="catalog__genres-link">Kids & Family</a>
-        </li>
-        <li className="catalog__genres-item">
-          <a href="#" className="catalog__genres-link">Romance</a>
-        </li>
-        <li className="catalog__genres-item">
-          <a href="#" className="catalog__genres-link">Sci-Fi</a>
-        </li>
-        <li className="catalog__genres-item">
-          <a href="#" className="catalog__genres-link">Thrillers</a>
-        </li>
+        )}
       </ul>
     </>
   )

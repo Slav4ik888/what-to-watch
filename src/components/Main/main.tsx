@@ -1,22 +1,27 @@
 import * as React from 'react';
+import {connect} from 'react-redux';
 
 import Header from '../Header/header';
 import GenreList from '../GenreList/genre-list';
 import CardsList from'../CardsList/cards-list';
 import Footer from '../Footer/footer';
 
+import {getGenresList, getFilmCards, getFiltredList} from '../../redusers/watch/selectors';
+
 import {CardType, TitleFilm} from '../../types';
 
 
 type Props = {
   titleFilm: TitleFilm,
-  catalogMoviesList: CardType[],
   onCardTitleClick: (card: CardType) => void,
+  genreList: string[],
+  filmsCards: CardType[],
+
 };
 
 
-const Main: React.FC<Props> = ({titleFilm: {name, genre, released}, catalogMoviesList,
-onCardTitleClick}) => {
+const Main: React.FC<Props> = ({titleFilm: {name, genre, released},
+  genreList, filmsCards, onCardTitleClick}) => {
   return (
     <>
       <div className="visually-hidden">
@@ -93,10 +98,10 @@ onCardTitleClick}) => {
           <section className="catalog">
             <h2 className="catalog__title visually-hidden">Catalog</h2>
 
-            <GenreList />
+            <GenreList genreList={genreList} />
 
             <CardsList
-              catalogMoviesList={catalogMoviesList}
+              filmsCards={filmsCards}
               onCardTitleClick={onCardTitleClick}
             />
 
@@ -111,4 +116,15 @@ onCardTitleClick}) => {
   );
 };
 
-export default Main;
+const mapStateToProps = (state) => ({
+  genreList: getGenresList(state),
+  filmsCards: getFilmCards(state),
+  // filtredList: getFiltredList(state),
+});
+
+// const mapDispatchToProps = (dispatch) => ({
+// });
+
+export {Main};
+export default connect(mapStateToProps)(Main);
+

@@ -7,8 +7,6 @@ import App from './components/App/app';
 
 import reducer from './redusers/reducer';
 
-import {mockListFilms} from './mocks/mockListFilms';
-// import {CardType} from './types';
 import {titleFilm} from './consts';
 
 
@@ -22,7 +20,6 @@ ReactDOM.render(
     <Provider store={store}>
       <App
         titleFilm={titleFilm}
-        catalogMoviesList={mockListFilms}
       />
     </Provider>
   , document.getElementById(`root`));

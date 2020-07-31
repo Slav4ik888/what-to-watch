@@ -11,7 +11,7 @@ describe(`Snapshot <CardList/>`, () => {
     const tree = renderer
       .create(
           <CardList
-            catalogMoviesList={mockListFilms}
+            filmsCards={mockListFilms}
             onCardTitleClick={() => {}}
           />
       )

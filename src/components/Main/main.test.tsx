@@ -13,7 +13,7 @@ describe(`Snapshot <Main/>`, () => {
       .create(
           <Main
             titleFilm={titleFilm}
-            catalogMoviesList={mockListFilms}
+            filmsCards={mockListFilms}
             onCardTitleClick={() => {}}
           />
       )
