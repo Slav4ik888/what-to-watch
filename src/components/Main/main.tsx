@@ -8,20 +8,24 @@ import Footer from '../Footer/footer';
 
 import {getGenresList, getFilmCards, getFiltredList} from '../../redusers/watch/selectors';
 
+// import {withGenre} from '../../hocs/with-genre/with-genre';
+
 import {CardType, TitleFilm} from '../../types';
+
+
+// const GenreListWrapped = withGenre(GenreList);
 
 
 type Props = {
   titleFilm: TitleFilm,
   onCardTitleClick: (card: CardType) => void,
-  genreList: string[],
-  filmsCards: CardType[],
-
+  // filmsCards: CardType[],
+  filtredList: CardType[],
 };
 
 
 const Main: React.FC<Props> = ({titleFilm: {name, genre, released},
-  genreList, filmsCards, onCardTitleClick}) => {
+  filtredList, onCardTitleClick}) => {
   return (
     <>
       <div className="visually-hidden">
@@ -98,10 +102,10 @@ const Main: React.FC<Props> = ({titleFilm: {name, genre, released},
           <section className="catalog">
             <h2 className="catalog__title visually-hidden">Catalog</h2>
 
-            <GenreList genreList={genreList} />
+            <GenreList />
 
             <CardsList
-              filmsCards={filmsCards}
+              filmsCards={filtredList}
               onCardTitleClick={onCardTitleClick}
             />
 
@@ -117,9 +121,8 @@ const Main: React.FC<Props> = ({titleFilm: {name, genre, released},
 };
 
 const mapStateToProps = (state) => ({
-  genreList: getGenresList(state),
   filmsCards: getFilmCards(state),
-  // filtredList: getFiltredList(state),
+  filtredList: getFiltredList(state),
 });
 
 // const mapDispatchToProps = (dispatch) => ({

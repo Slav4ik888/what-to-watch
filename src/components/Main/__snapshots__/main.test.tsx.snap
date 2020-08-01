@@ -263,102 +263,74 @@ Array [
       >
         <li
           className="catalog__genres-item catalog__genres-item--active"
+          id="i0"
+          onClick={[Function]}
         >
           <a
             className="catalog__genres-link"
-            href="#"
+            href="#i 0"
           >
             All genres
           </a>
         </li>
         <li
-          className="catalog__genres-item"
+          className="catalog__genres-item false"
+          id="i1"
+          onClick={[Function]}
         >
           <a
             className="catalog__genres-link"
-            href="#"
+            href="#i 1"
+          >
+            Fantastic
+          </a>
+        </li>
+        <li
+          className="catalog__genres-item false"
+          id="i2"
+          onClick={[Function]}
+        >
+          <a
+            className="catalog__genres-link"
+            href="#i 2"
           >
             Comedies
           </a>
         </li>
         <li
-          className="catalog__genres-item"
+          className="catalog__genres-item false"
+          id="i3"
+          onClick={[Function]}
         >
           <a
             className="catalog__genres-link"
-            href="#"
+            href="#i 3"
           >
-            Crime
+            Detectivies
           </a>
         </li>
         <li
-          className="catalog__genres-item"
+          className="catalog__genres-item false"
+          id="i4"
+          onClick={[Function]}
         >
           <a
             className="catalog__genres-link"
-            href="#"
-          >
-            Documentary
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-          >
-            Dramas
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-          >
-            Horror
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-          >
-            Kids & Family
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
+            href="#i 4"
           >
             Romance
           </a>
         </li>
         <li
-          className="catalog__genres-item"
+          className="catalog__genres-item false"
+          id="i5"
+          onClick={[Function]}
         >
           <a
             className="catalog__genres-link"
-            href="#"
+            href="#i 5"
           >
-            Sci-Fi
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-          >
-            Thrillers
+            Sexy
           </a>
         </li>
       </ul>

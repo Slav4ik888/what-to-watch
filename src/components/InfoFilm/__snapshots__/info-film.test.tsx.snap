@@ -313,28 +313,6 @@ Array [
             </a>
           </h3>
         </article>
-        <article
-          className="small-movie-card catalog__movies-card"
-          onClick={[Function]}
-          onPointerEnter={[Function]}
-          onPointerLeave={[Function]}
-        >
-          <div
-            className="small-movie-card__image"
-          >
-            <video />
-          </div>
-          <h3
-            className="small-movie-card__title"
-          >
-            <a
-              className="small-movie-card__link"
-              href="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
-            >
-              Snatch
-            </a>
-          </h3>
-        </article>
       </div>
     </section>
     <footer

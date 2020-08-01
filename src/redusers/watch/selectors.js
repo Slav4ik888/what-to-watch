@@ -15,7 +15,7 @@ export const getSelectedGenre = (state) => {
 };
 
 
-export const getGenresList = createSelector(
+export const getGenresListTitle = createSelector(
     getFilmCards,
     (filmCards) => {
       // Список уникальных жанров находящихся в filmCards
@@ -42,6 +42,12 @@ export const getGenresList = createSelector(
     }
 );
 
+export const adaptTitleGenre = (titleGenre) => {
+  let newTitleGenre = titleGenre;
+
+
+  return newTitleGenre;
+};
 
 export const getFiltredList = createSelector(
     getFilmCards,

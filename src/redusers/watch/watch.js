@@ -3,35 +3,35 @@ import {mockListFilms} from '../../mocks/mockListFilms';
 
 
 const initState = {
-  selectedGenre: `Comedy`,
+  selectedGenre: `All genres`,
   filmCards: mockListFilms,
 };
 
 const ActionType = {
-  CHANGE_FILTER_GENRE: `CHANGE_FILTER_GENRE`,
-  GET_FILMS: `GET_FILMS`,
+  CHANGE_SELECTED_GENRE: `CHANGE_SELECTED_GENRE`,
+  SET_FILMS: `SET_FILMS`,
 };
 
 const ActionCreator = {
-  changeFilterGenre: (genre) => ({
-    type: ActionType.CHANGE_FILTER_GENRE,
+  changeSelectedGenre: (genre) => ({
+    type: ActionType.CHANGE_SELECTED_GENRE,
     payload: genre,
   }),
 
-  getFilms: (films) => ({
-    type: ActionCreator.GET_FILMS,
+  setFilms: (films) => ({
+    type: ActionCreator.SET_FILMS,
     payload: films,
   }),
 };
 
 const reducer = (state = initState, action) => {
   switch (action.type) {
-    case ActionType.CHANGE_FILTER_GENRE:
+    case ActionType.CHANGE_SELECTED_GENRE:
       return extend(state, {
         selectedGenre: action.payload,
       });
 
-    case ActionType.GET_FILMS:
+    case ActionType.SET_FILMS:
       return extend(state, {
         filmCards: action.payload,
       });
