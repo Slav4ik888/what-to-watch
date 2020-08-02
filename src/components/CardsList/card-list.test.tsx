@@ -13,6 +13,7 @@ describe(`Snapshot <CardList/>`, () => {
           <CardList
             filmsCards={mockListFilms}
             onCardTitleClick={() => {}}
+            filmsCountView={8}
           />
       )
       .toJSON();

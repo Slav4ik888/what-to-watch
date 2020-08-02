@@ -4,28 +4,27 @@ import {connect} from 'react-redux';
 import Header from '../Header/header';
 import GenreList from '../GenreList/genre-list';
 import CardsList from'../CardsList/cards-list';
+import ButtonShowMore from './ButtonShowMore/button-show-more';
 import Footer from '../Footer/footer';
 
-import {getGenresList, getFilmCards, getFiltredList} from '../../redusers/watch/selectors';
-
-// import {withGenre} from '../../hocs/with-genre/with-genre';
+import {ActionCreator} from '../../redusers/watch/watch';
+import {getFilmsCountView, getFilmCards, getFiltredList} from '../../redusers/watch/selectors';
 
 import {CardType, TitleFilm} from '../../types';
-
-
-// const GenreListWrapped = withGenre(GenreList);
 
 
 type Props = {
   titleFilm: TitleFilm,
   onCardTitleClick: (card: CardType) => void,
+  handleShowMore: () => void;
   // filmsCards: CardType[],
   filtredList: CardType[],
+  filmsCountView: number,
 };
 
 
 const Main: React.FC<Props> = ({titleFilm: {name, genre, released},
-  filtredList, onCardTitleClick}) => {
+  filtredList, onCardTitleClick, filmsCountView, handleShowMore}) => {
   return (
     <>
       <div className="visually-hidden">
@@ -107,11 +106,14 @@ const Main: React.FC<Props> = ({titleFilm: {name, genre, released},
             <CardsList
               filmsCards={filtredList}
               onCardTitleClick={onCardTitleClick}
+              filmsCountView={filmsCountView}
             />
 
-            <div className="catalog__more">
-              <button className="catalog__button" type="button">Show more</button>
-            </div>
+            <ButtonShowMore
+              onShowMore={handleShowMore}
+              showButton={filmsCountView <= filtredList.length - 1}
+            />
+
           </section>
 
           <Footer />
@@ -123,11 +125,16 @@ const Main: React.FC<Props> = ({titleFilm: {name, genre, released},
 const mapStateToProps = (state) => ({
   filmsCards: getFilmCards(state),
   filtredList: getFiltredList(state),
+  filmsCountView: getFilmsCountView(state),
 });
 
-// const mapDispatchToProps = (dispatch) => ({
-// });
+const mapDispatchToProps = (dispatch) => ({
+  handleShowMore() {
+    dispatch(ActionCreator.addFilmsCountView());
+  },
+});
+
 
 export {Main};
-export default connect(mapStateToProps)(Main);
+export default connect(mapStateToProps, mapDispatchToProps)(Main);
 

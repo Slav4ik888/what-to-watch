@@ -42,12 +42,14 @@ export const getGenresListTitle = createSelector(
     }
 );
 
+
 export const adaptTitleGenre = (titleGenre) => {
   let newTitleGenre = titleGenre;
 
 
   return newTitleGenre;
 };
+
 
 export const getFiltredList = createSelector(
     getFilmCards,
@@ -61,3 +63,8 @@ export const getFiltredList = createSelector(
       return filtredFilmCards;
     }
 );
+
+
+export const getFilmsCountView = (state) => {
+  return state[NAME_SPACE].filmsCountView;
+};

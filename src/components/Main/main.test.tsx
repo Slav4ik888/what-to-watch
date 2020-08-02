@@ -19,6 +19,7 @@ describe(`Snapshot <Main/>`, () => {
       [NameSpace.WATCH]: {
         selectedGenre: `All genres`,
         filmCards: mockListFilms,
+        filmsCountView: 8,
       },
     });
 
@@ -29,6 +30,9 @@ describe(`Snapshot <Main/>`, () => {
               titleFilm={titleFilm}
               filtredList={mockListFilms}
               onCardTitleClick={() => {}}
+              filmsCountView={8}
+              handleShowMore={() => {}}
+
             />
           </Provider>
       )

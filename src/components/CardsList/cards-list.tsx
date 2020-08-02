@@ -8,7 +8,9 @@ import {CardType} from '../../types';
 interface Props {
   filmsCards: CardType[],
   onCardTitleClick: (card: CardType) => void,
+  filmsCountView: number,
 };
+
 
 interface State {
   hoverFilm: CardType | null,
@@ -32,11 +34,13 @@ class CardsList extends React.PureComponent<Props, State> {
   }
 
   render() {
-    const {filmsCards, onCardTitleClick} = this.props;
+    const {filmsCards, onCardTitleClick, filmsCountView} = this.props;
 
     return (
       <div className="catalog__movies-list">
-        {filmsCards.map((card, i) => (
+        {filmsCards
+        .slice(0, filmsCountView)
+        .map((card, i) => (
           <Card
             key={`${card.name}${i}`}
             card={card}
