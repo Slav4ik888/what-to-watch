@@ -6,62 +6,49 @@ import {CardType} from '../../types';
 
 
 interface Props {
-  card: CardType;
-  onHoverFilm: (card: CardType) => void | null;
-  onCardTitleClick: (card: CardType) => void;
+  card: CardType,
+  isHover: boolean,
+  onCardMouseEnter: (card: CardType) => void | null,
+  onCardMouseLeave: () => void | null,
+  onCardTitleClick: (card: CardType) => void,
 };
 
-interface State {
-  isHover: boolean;
-}
 
-class Card extends React.PureComponent<Props, State> {
-  constructor(props) {
-    super(props);
-    this.handlePointerEnter = this.handlePointerEnter.bind(this);
-    this.handlePointerLeave = this.handlePointerLeave.bind(this);
-    this.handleCardTitleClick = this.handleCardTitleClick.bind(this);
-
-    this.state = {
-      isHover: false,
-    };
+const Card: React.FC<Props> = ({card, isHover, onCardMouseEnter, onCardMouseLeave, onCardTitleClick}) => {
+  
+  const handleCardTitleClick = () => {
+    onCardTitleClick(card);
   }
 
-  handlePointerEnter = () => {
-    if (this.props.onHoverFilm) this.props.onHoverFilm(this.props.card)
-    this.setState({isHover: true})
+  const handlePointerEnter = () => {
+    onCardMouseEnter(card)
   }
-  handlePointerLeave = () => {
-    this.setState({isHover: false})
-  }
-
-  handleCardTitleClick = () => {
-    this.props.onCardTitleClick(this.props.card);
+  
+  const handlePointerLeave = () => {
+    onCardMouseLeave();
   }
 
-  render() {
-    return (
-      <article 
-        className="small-movie-card catalog__movies-card"
-        onPointerEnter={this.handlePointerEnter}
-        onPointerLeave={this.handlePointerLeave}
-        onClick={this.handleCardTitleClick}
-      >
-        <div className="small-movie-card__image">
-          <VideoPlayer
-            card={this.props.card}
-            isHover={this.state.isHover}
-          />
-          {/* <img src={card.previewImage} alt={card.name} width="280" height="175" /> */}
-        </div>
-        <h3 className="small-movie-card__title">
-          <a className="small-movie-card__link" href={this.props.card.previewVideoLink}>
-            {this.props.card.name}
-          </a>
-        </h3>
-      </article>
-    )
-  }
+  return (
+    <article 
+      className="small-movie-card catalog__movies-card"
+      onPointerEnter={handlePointerEnter}
+      onPointerLeave={handlePointerLeave}
+      onClick={handleCardTitleClick}
+    >
+      <div className="small-movie-card__image">
+        <VideoPlayer
+          card={card}
+          isHover={isHover}
+        />
+        {/* <img src={card.previewImage} alt={card.name} width="280" height="175" /> */}
+      </div>
+      <h3 className="small-movie-card__title">
+        <a className="small-movie-card__link" href={card.previewVideoLink}>
+          {card.name}
+        </a>
+      </h3>
+    </article>
+  )
 };
 
 export default Card;

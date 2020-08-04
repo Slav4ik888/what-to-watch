@@ -2,8 +2,12 @@ import * as React from 'react';
 
 import Card from '../Card/card';
 
+import withHoverItem from '../../hocs/with-hover-item/with-hover-item';
+
 import {CardType} from '../../types';
 
+
+const CardWrap = withHoverItem(Card);
 
 interface Props {
   filmsCards: CardType[],
@@ -12,46 +16,22 @@ interface Props {
 };
 
 
-interface State {
-  hoverFilm: CardType | null,
-};
+const CardsList:React.FC<Props> = ({filmsCards, onCardTitleClick, filmsCountView}) => {
 
+  return (
+    <div className="catalog__movies-list">
+      {filmsCards
+      .slice(0, filmsCountView)
+      .map((card, i) => (
+        <CardWrap
+          key={`${card.name}${i}`}
+          card={card}
+          onCardTitleClick={onCardTitleClick}
+        />
+      ))}
 
-class CardsList extends React.PureComponent<Props, State> {
-  state: State;
-  props: Props;
-
-  constructor(props) {
-    super(props);
-    this._handleHoverFilm = this._handleHoverFilm.bind(this);
-    this.state = {
-      hoverFilm: null,
-    };
-  }
-
-  _handleHoverFilm(film: CardType) {
-    this.setState({hoverFilm: film});
-  }
-
-  render() {
-    const {filmsCards, onCardTitleClick, filmsCountView} = this.props;
-
-    return (
-      <div className="catalog__movies-list">
-        {filmsCards
-        .slice(0, filmsCountView)
-        .map((card, i) => (
-          <Card
-            key={`${card.name}${i}`}
-            card={card}
-            onHoverFilm={this._handleHoverFilm}
-            onCardTitleClick={onCardTitleClick}
-          />
-        ))}
-
-      </div>
-    )
-  };
+    </div>
+  )
 };
 
 export default CardsList;

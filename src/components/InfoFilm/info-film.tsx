@@ -5,9 +5,13 @@ import MovieTabs from './MovieTabs/movie-tabs';
 import Card from '../Card/card';
 import Footer from '../Footer/footer';
 
+import withHoverItem from '../../hocs/with-hover-item/with-hover-item';
+
 import {mockListFilms} from '../../mocks/mockListFilms';
 import {CardType} from '../../types';
 
+
+const CardWrap = withHoverItem(Card);
 
 type Props = {
   card: CardType;
@@ -72,11 +76,10 @@ const InfoFilm: React.FC<Props> = ({card, onCardTitleClick}) => {
           {mockListFilms
             .filter((film) => film.genre === card.genre)
             .slice(0, 4)
-            .map((card, i) => (
-              <Card
+            .map((film, i) => (
+              <CardWrap
                 key={`${card.name}${i}`}
-                card={card}
-                onHoverFilm={null}
+                card={film}
                 onCardTitleClick={onCardTitleClick}
               />
           ))}

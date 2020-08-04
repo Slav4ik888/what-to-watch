@@ -9,6 +9,7 @@ describe(`Reducer WATCH work correctly`, () => {
       selectedGenre: `All genres`,
       filmCards: mockListFilms,
       filmsCountView: PLUS_FILMS_VIEW,
+      activeFilm: null,
     });
   });
 
@@ -62,6 +63,28 @@ describe(`Reducer WATCH work correctly`, () => {
     });
   });
 
+  it(`Change "setActiveFilm"`, () => {
+    expect(reducer({
+      activeFilm: null,
+    }, {
+      type: ActionType.SET_ACTIVE_FILM,
+      payload: mockListFilms[0],
+    })).toEqual({
+      activeFilm: mockListFilms[0],
+    });
+  });
+
+  it(`Change "delActiveFilm"`, () => {
+    expect(reducer({
+      activeFilm: mockListFilms[0],
+    }, {
+      type: ActionType.DEL_ACTIVE_FILM,
+      payload: null,
+    })).toEqual({
+      activeFilm: null,
+    });
+  });
+
 });
 
 describe(`ACTION CREATORS work correctly `, () => {
@@ -86,4 +109,19 @@ describe(`ACTION CREATORS work correctly `, () => {
     });
   });
 
+  it(`ActionCreator.setActiveFilm`, () => {
+    expect(ActionCreator.setActiveFilm(mockListFilms[0])).toEqual({
+      type: ActionType.SET_ACTIVE_FILM,
+      payload: mockListFilms[0],
+    });
+  });
+
+  it(`ActionCreator.delActiveFilm`, () => {
+    expect(ActionCreator.delActiveFilm()).toEqual({
+      type: ActionType.DEL_ACTIVE_FILM,
+      payload: null,
+    });
+  });
 });
+
+// npm test watch.test.js

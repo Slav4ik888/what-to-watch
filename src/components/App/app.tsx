@@ -5,7 +5,8 @@ import {connect} from 'react-redux';
 import Main from '../Main/main';
 import InfoFilm from '../InfoFilm/info-film';
 
-// import {getGenresList, getFilmCards, getFiltredList} from '../../redusers/watch/selectors';
+import {ActionCreator} from '../../redusers/watch/watch';
+import {getActiveFilm} from '../../redusers/watch/selectors';
 
 import {CardType, TitleFilm} from '../../types';
 import {AppRoute} from '../../consts';
@@ -13,17 +14,13 @@ import {AppRoute} from '../../consts';
 
 interface Props {
   titleFilm: TitleFilm,
-  // filtredList: CardType[],
-};
-
-interface State {
-  activeFilm: CardType,
+  activeFilm: CardType | null,
+  setActiveFilm: (film: CardType) => void;
 };
 
 
-class App extends React.PureComponent<Props, State> {
+class App extends React.PureComponent<Props, {}> {
 
-  state: State;
   props: Props;
 
   constructor(props) {
@@ -31,21 +28,23 @@ class App extends React.PureComponent<Props, State> {
     this._renderMainPage = this._renderMainPage.bind(this);
     this._handleCardTitleClick = this._handleCardTitleClick.bind(this);
     
-    this.state = {
-      activeFilm: null
-    };
   }
 
   _handleCardTitleClick = (film) => {
-    this.setState({activeFilm: film});
+    this.props.setActiveFilm(film);
   };
 
   _renderMainPage() {
-    const {activeFilm} = this.state;
-    const {titleFilm} = this.props;
+    const {activeFilm, titleFilm} = this.props;
+    console.log('activeFilm: ', activeFilm);
 
     if (activeFilm) {
-      return <InfoFilm card={activeFilm} onCardTitleClick={this._handleCardTitleClick}/>
+      return (
+        <InfoFilm
+          card={activeFilm}
+          onCardTitleClick={this._handleCardTitleClick}
+        />
+      )
     } else {
       return (
         <Main
@@ -81,15 +80,15 @@ class App extends React.PureComponent<Props, State> {
   };
 };
 
-// const mapStateToProps = (state) => ({
-  // filmsCards: getFilmCards(state),
-  // filtredList: getFiltredList(state),
-// });
+const mapStateToProps = (state) => ({
+  activeFilm: getActiveFilm(state),
+});
 
-// const mapDispatchToProps = (dispatch) => ({
-// });
+const mapDispatchToProps = (dispatch) => ({
+  setActiveFilm(film) {
+    dispatch(ActionCreator.setActiveFilm(film));
+  },
+});
 
-// export {App};
-// export default connect(mapStateToProps)(App);
-
-export default App;
+export {App};
+export default connect(mapStateToProps, mapDispatchToProps)(App);

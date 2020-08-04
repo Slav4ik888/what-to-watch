@@ -68,3 +68,7 @@ export const getFiltredList = createSelector(
 export const getFilmsCountView = (state) => {
   return state[NAME_SPACE].filmsCountView;
 };
+
+export const getActiveFilm = (state) => {
+  return state[NAME_SPACE].activeFilm;
+};
