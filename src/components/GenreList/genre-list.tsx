@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 
-import {getGenresListTitle, getSelectedGenre, getFiltredList} from '../../redusers/watch/selectors';
-import {ActionCreator} from '../../redusers/watch/watch';
+import {getGenresListTitle, getSelectedGenre, getFiltredList} from '../../reducers/watch/selectors';
+import {ActionCreator} from '../../reducers/watch/watch';
 
 
 

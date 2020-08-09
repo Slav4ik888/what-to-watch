@@ -7,8 +7,8 @@ import CardsList from'../CardsList/cards-list';
 import ButtonShowMore from './ButtonShowMore/button-show-more';
 import Footer from '../Footer/footer';
 
-import {ActionCreator} from '../../redusers/watch/watch';
-import {getFilmsCountView, getFilmCards, getFiltredList} from '../../redusers/watch/selectors';
+import {ActionCreator} from '../../reducers/watch/watch';
+import {getFilmsCountView, getFilmCards, getFiltredList} from '../../reducers/watch/selectors';
 
 import {CardType, TitleFilm} from '../../types';
 

@@ -5,8 +5,8 @@ import {connect} from 'react-redux';
 import Main from '../Main/main';
 import InfoFilm from '../InfoFilm/info-film';
 
-import {ActionCreator} from '../../redusers/watch/watch';
-import {getActiveFilm} from '../../redusers/watch/selectors';
+import {ActionCreator} from '../../reducers/watch/watch';
+import {getActiveFilm} from '../../reducers/watch/selectors';
 
 import {CardType, TitleFilm} from '../../types';
 import {AppRoute} from '../../consts';
@@ -36,7 +36,6 @@ class App extends React.PureComponent<Props, {}> {
 
   _renderMainPage() {
     const {activeFilm, titleFilm} = this.props;
-    console.log('activeFilm: ', activeFilm);
 
     if (activeFilm) {
       return (

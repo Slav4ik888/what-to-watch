@@ -5,7 +5,7 @@ import {Provider} from 'react-redux';
 
 import GenreList from './genre-list';
 
-import {NameSpace} from '../../redusers/name-space';
+import {NameSpace} from '../../reducers/name-space';
 import {mockListFilms} from '../../mocks/mockListFilms';
 
 

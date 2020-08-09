@@ -1,15 +1,19 @@
-import {reducer, ActionType, ActionCreator, PLUS_FILMS_VIEW} from './watch';
+import MockAdapter from 'axios-mock-adapter';
+import {createAPI} from '../../api';
+import {reducer, ActionType, ActionCreator, Operation, PLUS_FILMS_VIEW} from './watch';
 
 import {mockListFilms} from '../../mocks/mockListFilms';
+import {adapterFilms} from '../../utils/adapter-films';
 
 
 describe(`Reducer WATCH work correctly`, () => {
   it(`Reducer without additional parameters should return initial state`, () => {
     expect(reducer(undefined, {})).toEqual({
+      filmCards: [],
       selectedGenre: `All genres`,
-      filmCards: mockListFilms,
       filmsCountView: PLUS_FILMS_VIEW,
       activeFilm: null,
+      isLoading: false,
     });
   });
 
@@ -40,11 +44,11 @@ describe(`Reducer WATCH work correctly`, () => {
   });
 
 
-  it(`Change "setFilms"`, () => {
+  it(`Change "loadFilms"`, () => {
     expect(reducer({
       filmCards: {},
     }, {
-      type: ActionType.SET_FILMS,
+      type: ActionType.LOAD_FILMS,
       payload: mockListFilms,
     })).toEqual({
       filmCards: mockListFilms,
@@ -95,9 +99,9 @@ describe(`ACTION CREATORS work correctly `, () => {
     });
   });
 
-  it(`ActionCreator.setFilms`, () => {
-    expect(ActionCreator.setFilms(mockListFilms)).toEqual({
-      type: ActionType.SET_FILMS,
+  it(`ActionCreator.loadFilms`, () => {
+    expect(ActionCreator.loadFilms(mockListFilms)).toEqual({
+      type: ActionType.LOAD_FILMS,
       payload: mockListFilms,
     });
   });
@@ -121,6 +125,45 @@ describe(`ACTION CREATORS work correctly `, () => {
       type: ActionType.DEL_ACTIVE_FILM,
       payload: null,
     });
+  });
+});
+
+
+const api = createAPI(() => {});
+
+describe(`WATCH Operation work correctly`, () => {
+
+  it(`loadFilms work correctly`, () => {
+    const apiMock = new MockAdapter(api);
+    const dispatch = jest.fn();
+    const filmsLoader = Operation.loadFilms();
+
+    apiMock
+      .onGet(`/films`) // Чтобы мок на запрос `/films`
+      .reply(200, [{fake: true}]); // вернул ответ 200 и массив таких данных [{fake: true}]
+
+    return filmsLoader(dispatch, () => {}, api)
+      .then(() => {
+        expect(dispatch).toHaveBeenCalledTimes(3); // Проверяем, что dispatch был вызван
+        expect(dispatch).toHaveBeenNthCalledWith(1, { // Проверяем с какими данными этот вызов был произведён
+          type: ActionType.SET_IS_LOADING,
+          payload: true,
+        });
+        expect(dispatch.mock.calls[0][0]).toEqual({
+          type: ActionType.SET_IS_LOADING,
+          payload: true,
+        });
+
+        expect(dispatch.mock.calls[1][0]).toEqual({
+          type: ActionType.LOAD_FILMS,
+          payload: adapterFilms([{fake: true}]),
+        });
+
+        // expect(dispatch).toHaveBeenNthCalledWith(1, { // Проверяем с какими данными этот вызов был произведён
+        //   type: ActionType.LOAD_OFFERS,
+        //   payload: [{fake: true}],
+        // });
+      });
   });
 });
 

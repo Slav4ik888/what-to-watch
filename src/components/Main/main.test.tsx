@@ -5,7 +5,7 @@ import {Provider} from 'react-redux';
 
 import {Main} from './main';
 
-import {NameSpace} from '../../redusers/name-space';
+import {NameSpace} from '../../reducers/name-space';
 import {mockListFilms} from '../../mocks/mockListFilms';
 import {titleFilm} from '../../consts';
 
